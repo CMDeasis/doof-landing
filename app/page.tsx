@@ -213,6 +213,7 @@ export default function DoofioWelcome() {
     const typewriterDelay = 1000 // Wait 1 second after page loads
     const typingSpeed = 100 // Speed of typing each character
     const lineDelay = 500 // Delay between lines
+    const restartDelay = 7000 // Restart after 7 seconds
 
     const startTypewriter = () => {
       let currentText = ""
@@ -242,6 +243,16 @@ export default function DoofioWelcome() {
             } else {
               // All lines completed, show buttons
               setTimeout(() => setShowButtons(true), 500)
+              
+              // Restart the typewriter effect after 7 seconds
+              setTimeout(() => {
+                setTypewriterText("")
+                setCurrentLineIndex(0)
+                currentText = ""
+                lineIndex = 0
+                charIndex = 0
+                setTimeout(typeNextChar, typewriterDelay)
+              }, restartDelay)
             }
           }
         }
@@ -369,14 +380,14 @@ export default function DoofioWelcome() {
 
         {/* Welcome Message with Typewriter Effect */}
         <div className="mb-12">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight min-h-[200px] md:min-h-[300px] flex flex-col justify-center drop-shadow-2xl">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight min-h-[200px] md:min-h-[300px] flex flex-col justify-center drop-shadow-2xl font-gaming" style={{ fontFamily: "'Press Start 2P', 'VT323', monospace" }}>
             {renderTypewriterText()}
           </h1>
 
           <div
             className={`transition-all duration-500 ${showButtons ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
           >
-            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
+            <p className="text-sm md:text-base text-gray-200 leading-relaxed max-w-2xl mx-auto drop-shadow-lg font-gaming" style={{ fontFamily: "'Press Start 2P', 'VT323', monospace" }}>
               Your gateway to an epic digital experience.
               <br />
               Ready to explore what's inside?
@@ -423,6 +434,10 @@ export default function DoofioWelcome() {
     </div>
   )
 }
+
+
+
+
 
 
 
