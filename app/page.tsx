@@ -13,7 +13,7 @@ export default function DoofioWelcome() {
   const [isSoundEnabled, setIsSoundEnabled] = useState(true)
   const audioContextRef = useRef<AudioContext | null>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
+  const animationRef = useRef<number | undefined>(undefined)
 
   const welcomeLines = ["Hello,", "Welcome to", "DOOFIO.SITE"]
 
@@ -354,9 +354,13 @@ export default function DoofioWelcome() {
         className={`relative z-10 text-center max-w-4xl mx-auto px-4 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
         {/* Logo */}
-        <div className="flex items-center justify-center space-x-3 mb-8">
-          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center animate-pulse shadow-lg shadow-purple-500/25">
-            <Gamepad2 className="w-8 h-8 text-white" />
+        <div className="flex items-center justify-center space-x-1 mb-8">
+          <div className="w-16 h-16 flex items-center justify-center">
+            <img 
+              src="/doofio.png" 
+              alt="DOOFIO Logo" 
+              className="w-full h-full object-contain"
+            />
           </div>
           <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent tracking-wider drop-shadow-lg">
             DOOFIO
@@ -419,3 +423,6 @@ export default function DoofioWelcome() {
     </div>
   )
 }
+
+
+
