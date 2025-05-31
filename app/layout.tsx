@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'DOOFIO',
+  title: 'doofio 👾',
   description: 'Your gateway to an epic digital experience',
   generator: 'DOOFIO',
   icons: {
@@ -19,8 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" />
+      </head>
       <body>{children}</body>
     </html>
   )
 }
+
 

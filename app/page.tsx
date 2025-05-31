@@ -362,8 +362,8 @@ export default function DoofioWelcome() {
               className="w-full h-full object-contain"
             />
           </div>
-          <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent tracking-wider drop-shadow-lg">
-            DOOFIO
+          <span className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent tracking-wider drop-shadow-lg font-gaming" style={{ fontFamily: "'Press Start 2P', 'VT323', monospace", letterSpacing: "0.05em" }}>
+            oofio👾
           </span>
         </div>
 
@@ -423,6 +423,8 @@ export default function DoofioWelcome() {
     </div>
   )
 }
+
+
 
 
 
